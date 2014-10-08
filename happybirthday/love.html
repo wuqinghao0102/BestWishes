@@ -1,0 +1,102 @@
+﻿
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Happy Birthday</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<!--
+    
+    匆忙中，
+    我能用诗句对你说什么？
+    我最爱真话不爱做作。
+    “你最可爱”我说出时来不及思索
+   	而思索后还是这样说。
+    
+    ———Love    
+        
+    -->
+<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<p><span class="comments">/**</span><br />
+				  <span class="space"/><span class="comments">* 我把月亮印在天上</span><br />
+				  <span class="space"/><span class="comments">* 天就是我的</span><br />
+				  <span class="space"/><span class="comments">*我把片鞋印在地上</span><br />
+                                                                  <span class="space"/><span class="comments">*地就是我的</span><br />
+                                                                  <span class="space"/><span class="comments">*我亲吻你的额头，</span><br />
+                                                                  <span class="space"/><span class="comments">*你就是我的</span><br />
+				
+		      </p>
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						***, 我们已经在一起
+					  <div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+                    	生日快乐 <br/>
+						永远爱你！
+						<div class="signature">- wu</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+          <p>r=a(1-sin θ)</p>
+          <p>Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />
+			Copyright © 2011 <a href='http://hackerzhou.me'>hackerzhou.me</a> 2009-2011<br />
+            <object><embed src="http://up.yuedisk.com/res/mp3player.swf?soundfile=http://up.yuedisk.com/wl/url/woxinyijiu69/178895/yuedisk.mp3&titles=www.yuedisk.com&artists=&autostart=yes&loop=yes" type="application/x-shockwave-flash" width="0" height="0" wmode="transparent" /></object>
+          </p>
+            
+  </div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2011, 4, 28);
+		together.setHours(18);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
